@@ -115,7 +115,7 @@ void loop() {
   counter++;
 
   readMeterPower();
-  readPlugStatus();
+  readPlugs();
   bool switchedPlugs = switchPlugs();
 
   if (switchedPlugs || counter >= COUNTER_MAX) {
@@ -154,7 +154,7 @@ void readMeterPower() {
   addMeasurement("meter_power_sum", meter_source, power_sum);
 }
 
-void readPlugStatus() {
+void readPlugs() {
   WiFiClient client;
   HTTPClient http;
 
